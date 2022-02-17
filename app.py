@@ -11,7 +11,6 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.feature_extraction.text import TfidfTransformer,TfidfVectorizer
 from sklearn.pipeline import Pipeline
-import pickle
 
 
 
@@ -33,13 +32,12 @@ Pipe = Pipeline([
     ('classifier',DecisionTreeClassifier())
 ])
 
-filename = './questionanswer.pkl'
+filename = 'questionanswer.pkl'
 
 model = pickle.load(open(filename, 'rb'))
 
 
 
-cols = ['age', 'sex', 'bmi', 'children', 'smoker', 'region']
 
 @app.route('/')
 def home():
