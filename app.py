@@ -60,7 +60,8 @@ def predict():
     #print('*******')
     #print([final])
     #print([final]))
-    prediction = model.predict([final])[0]
+    #prediction = model.predict([final])[0]
+    prediction = 'all is well'
     #prediction = int(prediction.Label[0])
     return render_template('home.html',pred='Kireka anasema: {}'.format(prediction))
 
