@@ -34,9 +34,9 @@ Pipe = Pipeline([
 
 filename = 'questionanswer.pkl'
 
-def read():
+def read_file():
     return pickle.load(open(filename, 'rb'))
-x = read()
+
 
 # with open(filename , 'rb') as f:
 #     model = pickle.load(f)
