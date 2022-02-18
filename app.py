@@ -32,19 +32,21 @@ Pipe = Pipeline([
     ('classifier',DecisionTreeClassifier())
 ])
 
+filename = 'questionanswer.pkl'
 
 
 
 
 
-#@app.route('/')
-@app.route('/', methods=['GET', 'POST'])
+
+@app.route('/')
+#@app.route('/', methods=['GET', 'POST'])
 def home():
     return render_template("home.html")
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    filename = 'questionanswer.pkl'
+
     model = pickle.load(open(filename, 'rb'))
     int_features = [x for x in request.form.values()]
     #print('**********')
