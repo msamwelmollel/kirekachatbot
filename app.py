@@ -67,6 +67,7 @@ def predict():
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
     data = request.get_json(force=True)
+    model = pickle.load(open(filename, 'rb'))
     #data_unseen = data #pd.DataFrame([data])
     prediction = model.predict(['What are you doing'])[0] # predict_model(model, data=data_unseen)
     output = prediction   #.Label[0]
