@@ -57,7 +57,7 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
 
-    model = pickle.load(open(filename, 'rb'))
+    #model = pickle.load(open(filename, 'rb'))
     int_features = [x for x in request.form.values()]
     #print('**********')
     #print(int_features)
