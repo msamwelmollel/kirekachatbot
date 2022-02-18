@@ -32,9 +32,7 @@ Pipe = Pipeline([
     ('classifier',DecisionTreeClassifier())
 ])
 
-filename = 'questionanswer.pkl'
 
-model = pickle.load(open(filename, 'rb'))
 
 
 
@@ -46,6 +44,8 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
+    filename = 'questionanswer.pkl'
+    model = pickle.load(open(filename, 'rb'))
     int_features = [x for x in request.form.values()]
     #print('**********')
     #print(int_features)
