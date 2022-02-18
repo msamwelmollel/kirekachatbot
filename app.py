@@ -33,6 +33,8 @@ Pipe = Pipeline([
 ])
 
 filename = 'questionanswer.pkl'
+with open(filename , 'rb') as f:
+    model = pickle.load(f)
 
 
 
