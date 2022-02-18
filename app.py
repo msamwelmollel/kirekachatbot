@@ -1,6 +1,7 @@
 from flask import Flask,request, url_for, redirect, render_template, jsonify
 
 #import pandas as pd
+#questionanswer.pkl filter=lfs diff=lfs merge=lfs -text
 import pickle
 #import numpy as np
 #import numpy as np 
