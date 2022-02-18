@@ -39,7 +39,8 @@ model = pickle.load(open(filename, 'rb'))
 
 
 
-@app.route('/')
+#@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
     return render_template("home.html")
 
