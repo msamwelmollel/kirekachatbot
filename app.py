@@ -14,10 +14,10 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.feature_extraction.text import TfidfTransformer,TfidfVectorizer
 from sklearn.pipeline import Pipeline
 
-import logging
+# import logging
 
-app.logger.addHandler(logging.StreamHandler(sys.stdout))
-app.logger.setLevel(logging.ERROR)
+# app.logger.addHandler(logging.StreamHandler(sys.stdout))
+# app.logger.setLevel(logging.ERROR)
 
 
 
@@ -104,7 +104,7 @@ if __name__ == '__main__':
 #     ])
 #     pickle.dump(Pipe, open(filename, 'wb'))
 #     model = pickle.load(open('questionanswer.pkl', 'rb'))#
-    model = joblib.load('joblibquestionandanswer.pkl')
+    
     app.run(debug=True)
 
 
