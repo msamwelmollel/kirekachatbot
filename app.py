@@ -24,6 +24,7 @@ from sklearn.pipeline import Pipeline
 
 # Initalise the Flask app
 app = Flask(__name__)
+model = joblib.load('joblibquestionandanswer.pkl')
 
 
 # Loads pre-trained model
