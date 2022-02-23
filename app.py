@@ -22,7 +22,9 @@ app = Flask(__name__)
 
 # Loads pre-trained model
 
-model = 'joblibquestionandanswer'
+#model = 'joblibquestionandanswer'
+
+model = joblib.load('joblibquestionandanswer.pkl')
 
 
 
