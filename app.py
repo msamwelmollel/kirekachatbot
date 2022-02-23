@@ -21,7 +21,7 @@ from sklearn.pipeline import Pipeline
 
 
 
-
+model = pickle.load(open('questionanswer.pkl', 'rb'))
 # Initalise the Flask app
 app = Flask(__name__)
 # model = joblib.load('joblibquestionandanswer.pkl')
@@ -106,7 +106,7 @@ if __name__ == '__main__':
 #     pickle.dump(Pipe, open(filename, 'wb'))
 #     model = pickle.load(open('questionanswer.pkl', 'rb'))#
     
-    app.run(debug=True)
+    app.run(port = 5000, debug=True)
 
 
 
