@@ -81,10 +81,11 @@ if __name__ == '__main__':
     
 #     filename = 'questionanswer.pkl'
 
-    def read_filemodel():
-        return pickle.load(open('questionanswer.pkl', 'rb'))
+#     def read_filemodel():
+#         return pickle.load(open('questionanswer.pkl', 'rb'))
 
-    x = read_filemodel()
+#     x = read_filemodel()
+    model = pickle.load(open('questionanswer.pkl', 'rb'))
 #     def cleaner(x):
 #     return [a for a in (''.join([a for a in x if a not in string.punctuation])).lower().split()]
 
