@@ -14,6 +14,11 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.feature_extraction.text import TfidfTransformer,TfidfVectorizer
 from sklearn.pipeline import Pipeline
 
+import logging
+
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
+
 
 
 
@@ -66,8 +71,8 @@ def predict():
     #print('*******')
     #print([final])
     #print([final]))
-#     prediction = model.predict([final])[0]
-    prediction =   model # 'all is well'
+    prediction = model.predict([final])[0]
+    prediction =   'all is well'
     #prediction = int(prediction.Label[0])
     return render_template('home.html',pred='Kireka anasema: {}'.format(prediction))
 
