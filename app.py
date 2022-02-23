@@ -20,7 +20,8 @@ from sklearn.pipeline import Pipeline
 # app.logger.setLevel(logging.ERROR)
 
 
-
+def cleaner(x):
+    return [a for a in (''.join([a for a in x if a not in string.punctuation])).lower().split()]
 model = pickle.load(open('questionanswer.pkl', 'rb'))
 # Initalise the Flask app
 app = Flask(__name__)
