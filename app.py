@@ -26,12 +26,12 @@ app = Flask(__name__)
 
 
 
-filename = 'questionanswer.pkl'
+# filename = 'questionanswer.pkl'
 
-def read_filemodel():
-    return pickle.load(open(filename, 'rb'))
+# def read_filemodel():
+#     return pickle.load(open(filename, 'rb'))
 
-x = read_filemodel()
+# x = read_filemodel()
 
 
 # with open(filename , 'rb') as f:
@@ -78,6 +78,13 @@ def predict_api():
     return jsonify(output)
 
 if __name__ == '__main__':
+    
+#     filename = 'questionanswer.pkl'
+
+    def read_filemodel():
+        return pickle.load(open('questionanswer.pkl', 'rb'))
+
+    x = read_filemodel()
 #     def cleaner(x):
 #     return [a for a in (''.join([a for a in x if a not in string.punctuation])).lower().split()]
 
