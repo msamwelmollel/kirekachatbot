@@ -22,7 +22,7 @@ app = Flask(__name__)
 
 # Loads pre-trained model
 
-
+model = []
 
 
 
@@ -51,7 +51,6 @@ def home():
 def predict():
 
     #model = pickle.load(open(filename, 'rb'))
-    model = pickle.load(open('questionanswer.pkl', 'rb'))
     int_features = [x for x in request.form.values()]
     #print('**********')
     #print(int_features)
@@ -96,6 +95,7 @@ if __name__ == '__main__':
 #         ('classifier',DecisionTreeClassifier())
 #     ])
 #     pickle.dump(Pipe, open(filename, 'wb'))
+    model = pickle.load(open('questionanswer.pkl', 'rb'))
     app.run(debug=True)
 
 
