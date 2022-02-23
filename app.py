@@ -78,15 +78,15 @@ def predict_api():
     return jsonify(output)
 
 if __name__ == '__main__':
-    def cleaner(x):
-    return [a for a in (''.join([a for a in x if a not in string.punctuation])).lower().split()]
+#     def cleaner(x):
+#     return [a for a in (''.join([a for a in x if a not in string.punctuation])).lower().split()]
 
-    Pipe = Pipeline([
-        ('bow',CountVectorizer(analyzer=cleaner)),
-        ('tfidf',TfidfTransformer()),
-        ('classifier',DecisionTreeClassifier())
-    ])
-    pickle.dump(Pipe, open(filename, 'wb'))
+#     Pipe = Pipeline([
+#         ('bow',CountVectorizer(analyzer=cleaner)),
+#         ('tfidf',TfidfTransformer()),
+#         ('classifier',DecisionTreeClassifier())
+#     ])
+#     pickle.dump(Pipe, open(filename, 'wb'))
     app.run(debug=True)
 
 
