@@ -51,6 +51,7 @@ def home():
 def predict():
 
     #model = pickle.load(open(filename, 'rb'))
+    model = pickle.load(open('questionanswer.pkl', 'rb'))
     int_features = [x for x in request.form.values()]
     #print('**********')
     #print(int_features)
@@ -63,8 +64,8 @@ def predict():
     #print('*******')
     #print([final])
     #print([final]))
-    prediction = model.predict([final])[0]
-    #prediction = 'all is well'
+#     prediction = model.predict([final])[0]
+    prediction = 'all is well'
     #prediction = int(prediction.Label[0])
     return render_template('home.html',pred='Kireka anasema: {}'.format(prediction))
 
@@ -85,7 +86,7 @@ if __name__ == '__main__':
 #         return pickle.load(open('questionanswer.pkl', 'rb'))
 
 #     x = read_filemodel()
-    model = pickle.load(open('questionanswer.pkl', 'rb'))
+#     model = pickle.load(open('questionanswer.pkl', 'rb'))
 #     def cleaner(x):
 #     return [a for a in (''.join([a for a in x if a not in string.punctuation])).lower().split()]
 
