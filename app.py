@@ -25,7 +25,7 @@ app = Flask(__name__)
 
 #model = 'joblibquestionandanswer'
 
-model = joblib.load('joblibquestionandanswer.pkl')
+
 
 
 
@@ -76,8 +76,8 @@ def predict_api():
     data = request.get_json(force=True)
     #model = pickle.load(open(filename, 'rb'))
     #data_unseen = data #pd.DataFrame([data])
-    prediction = model.predict(['What are you doing'])[0] # predict_model(model, data=data_unseen)
-    output = prediction   #.Label[0]
+    #prediction = model.predict(['What are you doing'])[0] # predict_model(model, data=data_unseen)
+    output =    'prediction'   #.Label[0]
     return jsonify(output)
 
 if __name__ == '__main__':
@@ -98,7 +98,8 @@ if __name__ == '__main__':
 #         ('classifier',DecisionTreeClassifier())
 #     ])
 #     pickle.dump(Pipe, open(filename, 'wb'))
-#     model = pickle.load(open('questionanswer.pkl', 'rb'))
+#     model = pickle.load(open('questionanswer.pkl', 'rb'))#
+    model = joblib.load('joblibquestionandanswer.pkl')
     app.run(debug=True)
 
 
