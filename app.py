@@ -22,7 +22,7 @@ app = Flask(__name__)
 
 # Loads pre-trained model
 
-model = []
+model = 'joblibquestionandanswer'
 
 
 
@@ -95,7 +95,7 @@ if __name__ == '__main__':
 #         ('classifier',DecisionTreeClassifier())
 #     ])
 #     pickle.dump(Pipe, open(filename, 'wb'))
-    model = pickle.load(open('questionanswer.pkl', 'rb'))
+#     model = pickle.load(open('questionanswer.pkl', 'rb'))
     app.run(debug=True)
 
 
