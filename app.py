@@ -34,7 +34,7 @@ def home():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    return str(model.predict(userText))
+    return str(model.predict([userText])[0])
 
 
 if __name__ == "__main__":
