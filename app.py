@@ -55,6 +55,7 @@ import pickle
 #import numpy as np 
 import joblib
 import string
+import json
 #from nltk.corpus import stopwords
 #import pandas as pd 
 from sklearn.feature_extraction.text import CountVectorizer
@@ -82,6 +83,10 @@ def home():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
+    with open("questions_save.json", "a") as data:
+        information = [{'questions': userText, 'answers': 'Hello'}]
+        data.write(json.dumps(information))
+        data.close()
     return str(model.predict([userText.lower()])[0])
 
 
